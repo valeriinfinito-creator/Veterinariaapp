@@ -1,0 +1,33 @@
+@model VeterinariaApp.Models.Veterinario
+
+@{
+    ViewData["Title"] = "Eliminar Veterinario";
+}
+
+<h2 class="text-danger">🗑 Eliminar Veterinario</h2>
+
+<div class="card card-wow p-4">
+
+    <h5>¿Seguro que deseas eliminar este veterinario?</h5>
+
+    <hr />
+
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Especialidad:</strong> @Model.Especialidad</p>
+    <p><strong>Horario:</strong> @Model.Horario</p>
+
+    <form asp-action="Delete" method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <button type="submit" class="btn btn-danger">
+            🗑 Sí, eliminar
+        </button>
+
+        <a asp-action="Index" class="btn btn-secondary">
+            ❌ Cancelar
+        </a>
+
+    </form>
+
+</div>

@@ -1,0 +1,47 @@
+@model VeterinariaApp.ViewModels.CitaViewModel
+
+@{
+ViewData["Title"] = "Nueva Cita";
+}
+
+<h2>➕ Nueva Cita</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Create" method="post" class="card card-wow p-4">
+
+    <div class="mb-3">
+        <label>Mascota</label>
+        <select asp-for="MascotaId"
+                asp-items="Model.Mascotas"
+                class="form-select">
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Veterinario</label>
+        <select asp-for="VeterinarioId"
+                asp-items="Model.Veterinarios"
+                class="form-select">
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha</label>
+        <input asp-for="Fecha" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Hora Inicio</label>
+        <input asp-for="HoraInicio" type="time" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Hora Fin</label>
+        <input asp-for="HoraFin" type="time" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-wow">
+        💾 Guardar
+    </button>
+
+</form>

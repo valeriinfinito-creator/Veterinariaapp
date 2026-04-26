@@ -1,0 +1,32 @@
+@model VeterinariaApp.Models.Veterinario
+
+@{
+    ViewData["Title"] = "Editar Veterinario";
+}
+
+<h2>✏️ Editar Veterinario</h2>
+
+<form asp-action="Edit" method="post" class="card card-wow p-4">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label>Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Especialidad</label>
+        <input asp-for="Especialidad" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Horario</label>
+        <input asp-for="Horario" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-wow">
+        💾 Actualizar
+    </button>
+
+</form>

@@ -1,0 +1,59 @@
+@model List<VeterinariaApp.Models.Mascota>
+
+@{
+ViewData["Title"] = "Mascotas";
+}
+
+<h2 class="mb-3">🐶 Mascotas Registradas</h2>
+
+<a class="btn btn-wow mb-3" asp-action="Create">
+    ➕ Nueva Mascota
+</a>
+
+<table class="table table-hover shadow-sm bg-white rounded">
+
+    <thead class="table-success">
+    <tr>
+        <th>Nombre</th>
+        <th>Especie</th>
+        <th>Raza</th>
+        <th>Edad</th>
+        <th>Peso</th>
+        <th>Propietario</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+
+        <td>@item.Nombre</td>
+        <td>@item.Especie</td>
+        <td>@item.Raza</td>
+        <td>@item.Edad</td>
+        <td>@item.Peso kg</td>
+        <td>@item.Propietario?.Nombre</td>
+
+        <td>
+
+            <a class="btn btn-sm btn-primary"
+               asp-action="Edit"
+               asp-route-id="@item.Id">
+                ✏️
+            </a>
+
+            <a class="btn btn-sm btn-danger"
+               asp-action="Delete"
+               asp-route-id="@item.Id">
+                🗑
+            </a>
+
+        </td>
+
+    </tr>
+    }
+    </tbody>
+
+</table>

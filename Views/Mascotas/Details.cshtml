@@ -1,0 +1,62 @@
+@model VeterinariaApp.Models.Mascota
+
+@{
+    ViewData["Title"] = "Detalle Mascota";
+}
+
+<h2 class="mb-3">🐶 Detalle de Mascota</h2>
+
+<div class="card card-wow p-4">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h5>Nombre</h5>
+            <p>@Model.Nombre</p>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Especie</h5>
+            <p>@Model.Especie</p>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Raza</h5>
+            <p>@Model.Raza</p>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Edad</h5>
+            <p>@Model.Edad años</p>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Peso</h5>
+            <p>@Model.Peso kg</p>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Propietario</h5>
+            <p>@Model.Propietario?.Nombre</p>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="mt-3">
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.Id"
+           class="btn btn-primary">
+            ✏️ Editar
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            🔙 Volver
+        </a>
+
+    </div>
+
+</div>

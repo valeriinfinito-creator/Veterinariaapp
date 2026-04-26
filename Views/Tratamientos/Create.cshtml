@@ -1,0 +1,32 @@
+@model VeterinariaApp.Models.Tratamiento
+
+@{
+    ViewData["Title"] = "Nuevo Tratamiento";
+}
+
+<h2>💊 Registrar Tratamiento</h2>
+
+<form asp-action="Create" method="post" class="card card-wow p-4">
+
+    <div class="mb-3">
+        <label>Diagnóstico</label>
+        <input asp-for="Diagnostico" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Observaciones</label>
+        <textarea asp-for="Observaciones" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Cita</label>
+        <select asp-for="CitaId" class="form-select"
+                asp-items="ViewBag.Citas">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-wow">
+        💾 Guardar
+    </button>
+
+</form>

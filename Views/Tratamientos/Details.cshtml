@@ -1,0 +1,26 @@
+@model VeterinariaApp.Models.Tratamiento
+
+@{
+    ViewData["Title"] = "Detalle Tratamiento";
+}
+
+<h2 class="mb-3">💊 Detalle Tratamiento</h2>
+
+<div class="card card-wow p-4">
+
+    <h5>Diagnóstico</h5>
+    <p>@Model.Diagnostico</p>
+
+    <h5>Observaciones</h5>
+    <p>@Model.Observaciones</p>
+
+    <h5>Cita</h5>
+    <p>@Model.CitaId</p>
+
+    <hr />
+
+    <a asp-action="Index" class="btn btn-secondary">
+        🔙 Volver
+    </a>
+
+</div>

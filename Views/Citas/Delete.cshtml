@@ -1,0 +1,37 @@
+@model VeterinariaApp.Models.Cita
+
+@{
+ViewData["Title"] = "Eliminar Cita";
+}
+
+<h2>🗑️ Eliminar Cita</h2>
+
+<div class="alert alert-danger">
+    ¿Estás seguro de eliminar esta cita?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Mascota</dt>
+    <dd class="col-sm-10">@Model.Mascota?.Nombre</dd>
+
+    <dt class="col-sm-2">Veterinario</dt>
+    <dd class="col-sm-10">@Model.Veterinario?.Nombre</dd>
+
+    <dt class="col-sm-2">Fecha</dt>
+    <dd class="col-sm-10">@Model.Fecha.ToShortDateString()</dd>
+
+    <dt class="col-sm-2">Estado</dt>
+    <dd class="col-sm-10">@Model.Estado</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">
+        Sí, eliminar
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Cancelar
+    </a>
+</form>
